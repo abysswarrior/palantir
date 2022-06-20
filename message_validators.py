@@ -5,7 +5,7 @@ def quality_channel_validator(message):
             position_data = msg[1].split(' ')
             position = position_data[1]
             pairs = position_data[2]
-            exchange = position_data[3]
+            exchange = position_data[4]
 
             time = msg[2].split("\n")[1]
 
@@ -18,6 +18,7 @@ def quality_channel_validator(message):
                             f"Time: {time}  '\n\n'" \
                             f"Enter: {enter} '\n\n' TP: {tp} '\n\n' Sl: {sl}".replace("'", "")
             return final_message, True
+        return None, False
     except Exception as e:
         print(e)
         return None, False

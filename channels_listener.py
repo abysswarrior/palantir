@@ -7,8 +7,8 @@ api_hash = env.API_HASH
 client = TelegramClient('anon', api_id, api_hash)
 palantir_channel = 'https://t.me/ravand_palantir'
 
-@client.on(events.NewMessage(chats='https://t.me/QualitySignalsChannel'))
-# @client.on(events.NewMessage(chats='me'))
+# @client.on(events.NewMessage(chats='https://t.me/QualitySignalsChannel'))
+@client.on(events.NewMessage(chats='me'))
 async def quality_signal_channel_listener(event):
 
     new_message = event.message.message

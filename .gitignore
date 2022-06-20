@@ -141,3 +141,7 @@ cython_debug/
 # editor
 .vscode
 .idea/
+
+# telegram
+*.session
+*.session-journal

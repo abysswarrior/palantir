@@ -1,0 +1,8 @@
+gem = '💎'
+money = '💰'
+dollar = '💲'
+rocket = '🚀'
+dart = '🎯'
+no_entry = '🚫'
+red = '🔴'
+green = '🟢'

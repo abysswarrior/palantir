@@ -1,5 +1,5 @@
-from symbols import *
-from icon_finder import get_crypto_icon
+from common.symbols import *
+from common.icon_finder import get_crypto_icon
 
 def quality_channel_validator(message):
     try:
@@ -33,8 +33,8 @@ def quality_channel_validator(message):
             final_message = f"{logo}{gem} **Position**: {position} \n{money} **Pairs**: {pairs} \n" \
                             f"{dollar} **Exchange**: {exchange} \n" \
                             f"{rocket} **Enter**: `{enter}` \n{dart} **TP**: `{tp}` \n{no_entry} **Sl**: `{sl}` " \
-                            f"\n\n\n{time} \n  #quality_channel \n " \
-                            f" @ravand_palantir \n\n{logo_link}".replace("'", "")
+                            f"\n\n\n{time} \n #quality_channel \n " \
+                            f"@ravand_palantir \n\n{logo_link}".replace("'", "")
 
             return final_message
         return None

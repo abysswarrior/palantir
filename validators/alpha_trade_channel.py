@@ -66,7 +66,7 @@ def alpha_trade_channel_validator(message):
         final_message = f"{logo}{gem} **Position**: {position} \n{money} **Pairs**: {pairs} \n" \
                         f"{dollar} **Exchange**: {exchange} \n" \
                         f"{rocket} **Enter**:  `{enter}` \n{dart} **TP**:  `{tp}` \n{no_entry} **Sl**:  `{sl}` " \
-                        f"\n\n\n{clock}{time} \n #alpha_trade_channel \n " \
+                        f"\n\n\n{clock}{time} \n " \
                         f"@ravand_palantir \n\n{logo_link}".replace("'", "")
 
         return final_message

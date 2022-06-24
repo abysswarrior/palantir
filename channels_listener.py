@@ -2,6 +2,7 @@ from telethon import TelegramClient, events
 from common import environments as env
 from validators.quality_channel import quality_channel_validator
 from validators.alpha_trade_channel import alpha_trade_channel_validator
+from validators.scalping_300_channel import scalipng_300_channel_validator
 
 api_id = env.API_Id
 api_hash = env.API_HASH
@@ -13,7 +14,7 @@ palantir_channel = 'https://t.me/ravand_palantir'
 async def quality_signal_channel_listener(event):
 
     new_message = event.message.message
-    print("-------- new signal")
+    print("-------- new signal from quality channel")
 
     final_message = quality_channel_validator(new_message)
 
@@ -27,9 +28,23 @@ async def quality_signal_channel_listener(event):
 async def alpha_trade_channel_listener(event):
 
     new_message = event.message.message
-    print("-------- new signal")
+    print("-------- new signal from alpha trade")
 
     final_message = alpha_trade_channel_validator(new_message)
+
+    if final_message:
+
+        # await client.forward_messages(entity=palantir_channel, messages=event.message)
+        await client.send_message(entity=palantir_channel, message=final_message)
+
+@client.on(events.NewMessage(chats='https://t.me/Scalping_300'))
+# @client.on(events.NewMessage(chats='me'))
+async def scalping_300_channel_listener(event):
+
+    new_message = event.message.message
+    print("-------- new signal from scalping 300")
+
+    final_message = scalipng_300_channel_validator(new_message)
 
     if final_message:
 
